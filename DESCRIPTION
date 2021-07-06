@@ -1,16 +1,18 @@
 Package: blindrecalc
 Type: Package
 Title: Blinded Sample Size Recalculation
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: 
    c(person(given = "Lukas",
             family = "Baumann", 
-            role = c("aut"),
-            email = "baumann@imbi.uni-heidelberg.de"),
+            role = c("aut", "cre"),
+            email = "baumann@imbi.uni-heidelberg.de",
+            comment = c(ORCID = "0000-0001-7931-7470")),
      person(given = "Maximilian", 
             family = "Pilz",
-            role = c("aut", "cre"),
-            email = "pilz@imbi.uni-heidelberg.de"),
+            role = c("aut"),
+            email = "pilz@imbi.uni-heidelberg.de",
+            comment = c(ORCID = "0000-0002-9685-1613")),
       person(given = "Institute of Medical Biometry and Informatics - University of Heidelberg",
              role = c("cph")))
 Description: Computation of key characteristics and plots for blinded sample size recalculation.
@@ -24,20 +26,19 @@ Description: Computation of key characteristics and plots for blinded sample siz
 License: MIT + file LICENSE
 URL: https://github.com/imbi-heidelberg/blindrecalc
 Encoding: UTF-8
-LazyData: true
 Suggests: testthat, covr
 Imports: methods, Rcpp
 Collate: test_statistics.R methods.R Student.R blindrecalc.R
         ChiSquare.R ChiSquare_helper.R FarringtonManning.R
         FarringtonManning_helper.R RcppExports.R
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 LinkingTo: Rcpp
 NeedsCompilation: yes
-Packaged: 2020-05-07 12:52:49 UTC; Max
-Author: Lukas Baumann [aut],
-  Maximilian Pilz [aut, cre],
+Packaged: 2021-07-06 12:16:48 UTC; maximilian
+Author: Lukas Baumann [aut, cre] (<https://orcid.org/0000-0001-7931-7470>),
+  Maximilian Pilz [aut] (<https://orcid.org/0000-0002-9685-1613>),
   Institute of Medical Biometry and Informatics - University of
     Heidelberg [cph]
-Maintainer: Maximilian Pilz <pilz@imbi.uni-heidelberg.de>
+Maintainer: Lukas Baumann <baumann@imbi.uni-heidelberg.de>
 Repository: CRAN
-Date/Publication: 2020-05-11 11:10:14 UTC
+Date/Publication: 2021-07-06 16:00:16 UTC
