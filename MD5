@@ -1,4 +1,4 @@
-3b204090bc0972b50c6da57792aeee7b *DESCRIPTION
+404b509ce5b31dfdfbcc14f14a420310 *DESCRIPTION
 5c5fe0cca93e2353d45d5739cd31bc37 *LICENSE
 8c8fbe4b732c54fcb269ea53c0e67712 *NAMESPACE
 4352c2f098106ed4475f0f5ce5fb7570 *NEWS.md
@@ -8,11 +8,11 @@ d883979792a80141c9f7ce61eb200a2a *R/ChiSquare.R
 15c3e3789ed3b5dda5ffecebf0b5bfb5 *R/FarringtonManning_helper.R
 b91641e74ece0fc703116b71b9c3b2f3 *R/RcppExports.R
 8c416dbce451e29186894d5e849aafab *R/Student.R
-e0a396cccd9a1f5e7138e8823bbb5000 *R/blindrecalc.R
+a2e7ad323f82b66c2657f882a4641788 *R/blindrecalc.R
 59bad0261494ff6c2686f4c03ca1a60b *R/methods.R
 81b182ddfd1bac02ddcb2f1ef83db096 *R/test_statistics.R
-ddd22aae88b83cf79b96620933360bdc *README.md
-9436a1b03215014151ab0b4a74617681 *inst/CITATION
+f8dc63417ad3de99b1d6e48b16a3cc21 *README.md
+94364d702b63d06c2f3b6fc7d733cfee *inst/CITATION
 6c600a28aa032c6db029059c5f5f7208 *man/ChiSquare.Rd
 951714b50f5b064642c55362b69ef21f *man/FarringtonManning.Rd
 957e5f8f0f12a8eadb6d9868c7a258c2 *man/Student.Rd
@@ -20,7 +20,7 @@ ddd22aae88b83cf79b96620933360bdc *README.md
 2b6507be91b65978da27eb3f526ee039 *man/adjusted_alpha.FarringtonManning.Rd
 702d7a49ef4d4eb15f064b18a3f37e93 *man/adjusted_alpha.Rd
 f11da06ee710cec9e09d5097ad18fc11 *man/adjusted_alpha.Student.Rd
-b41e413a9cae6b74013976759404d4e2 *man/blindrecalc.Rd
+825d1227688f1026c82fbd83ef02809d *man/blindrecalc.Rd
 c41e071c46d7710b1122cf7ac789077a *man/n_dist.ChiSquare.Rd
 3c21e713b04e2505c8b7a971c7ed6f29 *man/n_dist.FarringtonManning.Rd
 d11c15e1c7d13592f125434336bbae33 *man/n_dist.Rd
