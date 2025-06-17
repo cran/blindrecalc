@@ -1,7 +1,7 @@
 Package: blindrecalc
 Type: Package
 Title: Blinded Sample Size Recalculation
-Version: 1.0.1
+Version: 1.1.0
 Authors@R: 
    c(person(given = "Lukas",
             family = "Baumann", 
@@ -27,18 +27,20 @@ Description: Computation of key characteristics and plots for blinded sample siz
 License: MIT + file LICENSE
 URL: https://github.com/imbi-heidelberg/blindrecalc
 Encoding: UTF-8
-Suggests: testthat, covr
+Suggests: testthat, covr, knitr, rmarkdown, bookdown
 Imports: methods, Rcpp
 Collate: test_statistics.R methods.R Student.R blindrecalc.R
         ChiSquare.R ChiSquare_helper.R FarringtonManning.R
         FarringtonManning_helper.R RcppExports.R
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 LinkingTo: Rcpp
+VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2023-10-04 12:24:26 UTC; uy240
-Author: Lukas Baumann [aut, cre] (<https://orcid.org/0000-0001-7931-7470>),
-  Maximilian Pilz [aut] (<https://orcid.org/0000-0002-9685-1613>),
+Packaged: 2025-06-17 07:44:52 UTC; uy240
+Author: Lukas Baumann [aut, cre] (ORCID:
+    <https://orcid.org/0000-0001-7931-7470>),
+  Maximilian Pilz [aut] (ORCID: <https://orcid.org/0000-0002-9685-1613>),
   Institute of Medical Biometry - University of Heidelberg [cph]
 Maintainer: Lukas Baumann <baumann@imbi.uni-heidelberg.de>
 Repository: CRAN
-Date/Publication: 2023-10-04 12:50:02 UTC
+Date/Publication: 2025-06-17 08:00:02 UTC
