@@ -2,7 +2,7 @@ context("test t-test")
 
 its <- 1e5
 
-test_that("Examples of Lu (2019) can be reproduced", {
+test_that("Examples of Lu (2016) can be reproduced", {
   set.seed(123)
   design1 <- setupStudent(alpha = .025, beta = .2, r = 1, delta = 3.5,
                          delta_NI = 0, n_max = Inf)
@@ -202,3 +202,13 @@ test_that("exact allocation", {
 })
 
 
+test_that("nmax cannot be smaller than n1", {
+  d <- setupStudent(
+    alpha = .025, beta = .2, r = 1, delta = 3.5, delta_NI = 0,
+    alternative = "greater", n_max = 2
+  )
+  expect_error(toer(d, n1 = 3, nuisance = 5.5, recalculation = TRUE))
+  expect_error(pow(d, n1 = 3, nuisance = 5.5, recalculation = TRUE))
+  expect_error(n_dist(d, n1 = 3, nuisance = 5.5))
+  expect_error(adjusted_alpha(d, n1 = 3, nuisance = 5.5, recalculation = TRUE))
+})

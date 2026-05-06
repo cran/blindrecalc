@@ -2,8 +2,8 @@
 #'
 #' This function simulates the probability that a test defined by
 #' \code{\link{setupStudent}} rejects the null hypothesis.
-#' Note that here the nuisance parameter \code{nuisance} is the variance
-#' of the outcome variable sigma^2.
+#' Note that here the nuisance parameter \code{nuisance} is the standard
+#' deviation of the outcome variable sigma.
 #'
 #' @template methods_student
 #' @template recalculation
@@ -16,11 +16,11 @@
 #' @return Simulated rejection probabilities and sample sizes for
 #'    each nuisance parameter.
 #'
-#' @details The implementation follows the algorithm in Lu (2019):
+#' @details The implementation follows the algorithm in Lu (2016):
 #' Distribution of the two-sample t-test statistic following blinded
 #' sample size re-estimation.
 #' Pharmaceutical Statistics 15: 208-215.
-#' Since Lu (2019) assumes negative non-inferiority margins, the non-inferiority
+#' Since Lu (2016) assumes negative non-inferiority margins, the non-inferiority
 #' margin of \code{design} is multiplied with -1 internally.
 #'
 #' @examples
@@ -52,7 +52,7 @@ simulation <- function(design, n1, nuisance, recalculation = TRUE, delta_true,
   }
   alloc <- design@r / (1 + design@r)^2
 
-  # the following implements the 5 steps of the algorithm by Lu (2019), p.210
+  # the following implements the 5 steps of the algorithm by Lu (2016), p.210
   ## Step 1
   z1 <- stats::rnorm(n = iters, mean = 0, sd = 1)
   v1 <- stats::rchisq(n = iters, df = n1 - 2)
@@ -133,6 +133,9 @@ setMethod("toer", signature("Student"),
             if (length(nuisance) > 1 && length(n1) > 1) {
               stop("Either the nuisance parameter or the internal pilot study sample size must be of length 1!")
             }
+            if (sum(design@n_max < n1) > 0) {
+              stop("n_max is smaller than n1.")
+            }
 
             # apply simulation function at the non-inferiority boundary (i.e., the null hypothesis)
             if (length(n1) == 1) {
@@ -174,6 +177,9 @@ setMethod("pow", signature("Student"),
                    allocation = c("approximate", "exact"), ...) {
             if (length(nuisance) > 1 && length(n1) > 1) {
               stop("Either the nuisance parameter or the internal pilot study sample size must be of length 1!")
+            }
+            if (sum(design@n_max < n1) > 0) {
+              stop("n_max is smaller than n1.")
             }
 
             # apply simulation function at the specified effect size (i.e., the alternative hypothesis)
@@ -225,6 +231,9 @@ setMethod("n_dist", signature("Student"),
                    seed = NULL, range = 0, allocation = c("approximate", "exact"), ...) {
             if (length(nuisance) > 1 && length(n1) > 1) {
               stop("Only one of n1 and nuisance can have length > 1.")
+            }
+            if (sum(design@n_max < n1) > 0) {
+              stop("n_max is smaller than n1.")
             }
 
             # create data frame that includes the simulated sample sizes
@@ -285,6 +294,10 @@ setMethod("n_dist", signature("Student"),
 setMethod("adjusted_alpha", signature("Student"),
           function(design, n1, nuisance, recalculation,
                    tol, iters = 1e4, seed = NULL, ...) {
+            if (sum(design@n_max < n1) > 0) {
+              stop("n_max is smaller than n1.")
+            }
+
             alpha_max <- function(alp) {
               d       <- design
               d@alpha <- alp
